@@ -22,6 +22,7 @@ class _CardsScreenState extends State<CardsScreen> {
       card = cards[Random().nextInt(5)];
       card2 = cards[Random().nextInt(5)];
       card3 = cards[Random().nextInt(5)];
+
       if (card == '🃏' || card2 == '🃏' || card3 == '🃏') {
         result = 'The joker is in there';
       }
@@ -29,7 +30,11 @@ class _CardsScreenState extends State<CardsScreen> {
   }
 
   void reset() {
-    String Questions = '❓ ❓ ❓';
+    setState(() {
+      card = '❓';
+      card2 = '❓';
+      card3 = '❓';
+    });
   }
 
   @override
