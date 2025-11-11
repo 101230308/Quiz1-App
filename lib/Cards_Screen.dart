@@ -11,16 +11,18 @@ class CardsScreen extends StatefulWidget {
 class _CardsScreenState extends State<CardsScreen> {
   List<String> cards = ['♣', '♠', '♥', '♦', '🃏'];
   String Questions = '❓ ❓ ❓';
-
   String result = '';
-  List<String> Cards = [
-    Questions = cards[Random().nextInt(5)],
-    Questions = cards[Random().nextInt(5)],
-    Questions = cards[Random().nextInt(5)],
-  ];
+
+  String card = '';
+  String card2 = '';
+  String card3 = '';
+
   void selectCards() {
     setState(() {
-      if (Questions == '🃏' || Questions == '🃏' || Questions == '🃏') {
+      card = cards[Random().nextInt(5)];
+      card2 = cards[Random().nextInt(5)];
+      card3 = cards[Random().nextInt(5)];
+      if (card == '🃏' || card2 == '🃏' || card3 == '🃏') {
         result = 'The joker is in there';
       }
     });
@@ -41,13 +43,14 @@ class _CardsScreenState extends State<CardsScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(Cards[0]),
+                Text(card),
                 SizedBox(width: 25),
-                Text(Cards[1]),
+                Text(card2),
                 SizedBox(width: 25),
-                Text(Cards[2]),
+                Text(card3),
               ],
             ),
+            Text(result),
 
             SizedBox(height: 50),
             ElevatedButton(
